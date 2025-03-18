@@ -1,9 +1,9 @@
 package com.InspiraDev.demo.repositories;
 
-import com.InspiraDev.demo.models.devotional;
+import com.InspiraDev.demo.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface devotionalRepository  extends JpaRepository<devotional, Long> {
+public interface IUserRepository extends JpaRepository<User, Long> {
 }

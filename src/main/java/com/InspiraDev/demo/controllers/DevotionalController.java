@@ -19,4 +19,6 @@ public class DevotionalController {
     public String getDevotionalService() {
         return "oi";
     }
+
+
 }
