@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5433:5433"
+    expose:
+      - "5433"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123mudar
+      - POSTGRES_DB=InspiraDev

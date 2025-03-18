@@ -10,17 +10,17 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = devotional.TABLE_NAME )
+@Table(name = Devotional.TABLE_NAME )
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
-public class devotional {
+public class Devotional {
 
 
     public static final String TABLE_NAME = "devocional";
 
     @Id
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, name = "devotional_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -36,6 +36,9 @@ public class devotional {
     @Column(name = "key_verse", nullable = false)
     private String keyverse;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
 }
