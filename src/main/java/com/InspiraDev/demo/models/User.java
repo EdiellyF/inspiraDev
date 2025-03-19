@@ -1,8 +1,10 @@
 package com.InspiraDev.demo.models;
 
+import com.InspiraDev.demo.controllers.dto.LoginRequest;
 import com.InspiraDev.demo.models.profiles.Role;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Set;
 
@@ -32,5 +34,11 @@ public class User {
 
     )
     private Set<Role> roles;
+
+
+    public boolean isLoginCorrect(LoginRequest loginRequest, PasswordEncoder passwordEncoder){
+      return passwordEncoder.matches(loginRequest.password(), this.password);
+
+    }
 
 }
